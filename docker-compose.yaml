@@ -1,0 +1,48 @@
+version: '3'
+services:
+  redis-server:
+    container_name: redis
+    image: 'redis'
+    ports:
+      - "6379:6379"
+    expose:
+      - "6379"
+    networks:
+      - app-network
+
+#  java-api:
+#    build: .
+#    links:
+#      - redis-server
+#    ports:
+#      - "8080:8080"
+#    depends_on:
+#      - mysql
+#    volumes:
+#      - .:/app
+#    container_name: java-api
+#    networks:
+#      - app-network
+
+  mysql:
+      image: mysql:latest
+      command: --innodb-use-native-aio=0
+      container_name: mysql
+      restart: always
+      tty: true
+      ports:
+        - "3306:3306"
+      volumes:
+        - ./db:/var/lib/mysql
+      environment:
+        - MYSQL_ROOT_PASSWORD=root
+        - MYSQL_DATABASE=fts_bookshelf
+      networks:
+        - app-network
+
+volumes:
+  db:
+
+networks:
+  app-network:
+    driver: bridge
