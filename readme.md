@@ -16,12 +16,7 @@ Caso a informação não seja encontrada no Redis, a consulta é realizada no My
 ## Como Executar?
 
 1) Baixe o repositório em sua estação;
-2) Com o serviço Docker ativo, execute o seguinte comando em seu terminal:
-
-   > docker compose up
-
-    Este comando iniciará os serviços MySQL, Redis, e executará o "jar" presente no diretório /api/target.
-3) Acesse em seu navegador o seguinte endereço:
+2) Após executar na IDE (considerando que o ambiente tem instalado o MySQL e Redis, e as credenciais para conexão estão corretas), acesse em seu navegador o seguinte endereço:
 
    > http://localhost:8080/
     
