@@ -1,9 +1,9 @@
 package com.github.guilhermewoelke.fts.api.controller;
 
-import com.github.guilhermewoelke.fts.api.dao.BookDAOInterface;
-import com.github.guilhermewoelke.fts.api.dto.BookDTO;
-import com.github.guilhermewoelke.fts.api.dto.BookListDTO;
-import com.github.guilhermewoelke.fts.api.models.Book;
+import com.github.guilhermewoelke.fts.api.domain.book.repository.BookDAOInterface;
+import com.github.guilhermewoelke.fts.api.domain.book.dto.BookDTO;
+import com.github.guilhermewoelke.fts.api.domain.book.dto.BookListDTO;
+import com.github.guilhermewoelke.fts.api.domain.book.entity.BookModel;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +24,7 @@ public class BookControllerTest {
     @Autowired
     private BookDAOInterface dao;
 
-    private Book book;
+    private BookModel book;
 
     @Test
     public void listTest() {

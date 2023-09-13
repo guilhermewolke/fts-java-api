@@ -1,11 +1,10 @@
 package com.github.guilhermewoelke.fts.api.controller;
 
-import com.github.guilhermewoelke.fts.api.dao.AuthorDAOInterface;
-import com.github.guilhermewoelke.fts.api.dto.AuthorBooksListDTO;
-import com.github.guilhermewoelke.fts.api.dto.AuthorDTO;
-import com.github.guilhermewoelke.fts.api.dto.AuthorListDTO;
-import com.github.guilhermewoelke.fts.api.models.Author;
-import org.junit.jupiter.api.BeforeAll;
+import com.github.guilhermewoelke.fts.api.domain.author.repository.AuthorDAOInterface;
+import com.github.guilhermewoelke.fts.api.domain.author.dto.AuthorBooksListDTO;
+import com.github.guilhermewoelke.fts.api.domain.author.dto.AuthorDTO;
+import com.github.guilhermewoelke.fts.api.domain.author.dto.AuthorListDTO;
+import com.github.guilhermewoelke.fts.api.domain.author.entity.AuthorModel;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +25,7 @@ public class AuthorControllerTest {
     @Autowired
     private AuthorDAOInterface dao;
 
-    private Author author;
+    private AuthorModel author;
 
     @Test
     public void listTest() {
